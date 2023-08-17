@@ -65,8 +65,10 @@ Descripción: Escribe una función que tome dos arreglos
 ordenados y sus tamaños, y luego fusione estos dos
 arreglos en un tercer arreglo también ordenado.
 */
-void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,
-                       int result[]) {}
+void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,int result[]) {
+  
+  
+}
 
 /*
 Ejercicio 5: Comprobación de Ordenación
@@ -114,4 +116,26 @@ typedef struct nodo {
   struct nodo *siguiente; // puntero al siguiente nodo
 } Nodo;
 
-Nodo *crearListaEnlazada(int arr[], int size) { return NULL; }
+Nodo *crearListaEnlazada(int arr[], int size) {
+  Nodo* cabeza = NULL; 
+  Nodo* actual = NULL; 
+
+  for (int i = 0; i < size; i++) {
+      Nodo* nuevoNodo = (Nodo*)malloc(sizeof(Nodo)); 
+      if (nuevoNodo == NULL) {
+          printf("Error al asignar memoria");
+          exit(EXIT_FAILURE);
+        }
+      nuevoNodo->numero=arr[i];
+      nuevoNodo->siguiente=NULL;
+      if (actual==NULL) {
+          cabeza=nuevoNodo;
+          actual=nuevoNodo;
+      } else {
+          actual->siguiente=nuevoNodo;
+          actual=nuevoNodo;
+      }
+    }
+
+  return cabeza; 
+}
