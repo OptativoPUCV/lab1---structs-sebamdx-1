@@ -44,6 +44,10 @@ int *filterEvenNumbers(int arr[], int size, int *newSize) {
         if (arr[i]%2==0)pares++;
     }
   int* arregloPares = (int*)malloc(pares * sizeof(int));
+  if (arregloPares == NULL) {
+        printf("Error al asignar memoria");
+        exit(EXIT_FAILURE);
+    }
   int llenarPares=0;
   for (int i=0;i<size;i++){
     if (arr[i]%2==0){
