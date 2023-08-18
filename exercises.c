@@ -83,14 +83,14 @@ int checkSorted(int arr[], int size) {
         if (arr[i] < arr[i - 1])asc=0;
         if (arr[i] > arr[i - 1])des=0;
     }
-    if (asc) {
+    if (asc){
         return 1;
-    } else if (des) {
-        return -1;
-    } else {
-        return 0;
     }
-    
+  if (des){
+      return -1;
+  } 
+  return 0;
+
 }
 
 /*
